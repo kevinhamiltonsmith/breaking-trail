@@ -4,8 +4,10 @@ Router.route('/', function () {
 });
 
 // when you navigate to "/home" automatically render the template named "home".
+Router.route('/', function () {
+   this.render('activities');
+});
 Router.route('/home');
-Router.route('/one');
 Router.route('/activity');
 Router.route('/activities');
 
