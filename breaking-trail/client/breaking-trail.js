@@ -7,10 +7,10 @@ Template.activities.helpers({
 Template.activity.events({
     'click #create-event-btn': function() {
         Events.insert({
-            activity: 'skiing',
-            details: 'here are the details',
-            name: 'snowbird',
-            skillLevel: 'expert'
+            activity: $( "#activity-type option:selected" ).text(),
+            details: $("#activity-details").val(),
+            name: $("#activity-name").val(),
+            skillLevel: $(".skill-level-btns-wrap input[type=radio]:checked").attr("value")
         });
 
         return false;
