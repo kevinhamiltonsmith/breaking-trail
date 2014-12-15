@@ -2,24 +2,19 @@
 Session.setDefault("counter", 0);
 
 Template.activities.helpers({
-    counter: function () {
-        return Clicks.get("counter");
+    count: function () {
+        return Clicks.find({});
     }
 });
 
 Template.activities.events({
-    'click clickButton': function () {
+    'click #clickButton': function () {
         // increment the counter when button is clicked
-        console.log("pushed");
-        CLicks.insert({
-            clickCount: "2"
-        });
-        // Clicks.set("counter", Session.get("counter") + 1);
-    }
-});
+        var currentCount = Session.get('counter') + 1;
+        Session.set('counter', currentCount);
 
-Template.body.helpers({
-    tasks: function () {
-        return Tasks.find({});
+        Clicks.insert({
+            clickCount: currentCount
+        });
     }
 });

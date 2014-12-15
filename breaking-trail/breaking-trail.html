@@ -42,5 +42,7 @@
         <li>Activity 2</li>
     </ul>
     <input type="button" id="clickButton" value="Click me">
-        <div>You have clicked this many times {{count}}</div>
+    {{#each count}}
+        <div>clickCount: {{clickCount}}</div>
+    {{/each}}
 </template>
