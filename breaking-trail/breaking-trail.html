@@ -1,14 +1,17 @@
 <head>
-  <title>breaking-trail</title>
+  <title>Breaking Trail - Backcountry</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+    <div class="container">
+        <h1>Breaking Trail</h1>
 
-  {{> hello}}
+        {{> login}}
+        {{> loginButtons}}
+    </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="login">
+    <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
 </template>
