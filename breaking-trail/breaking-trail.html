@@ -184,10 +184,11 @@
                 <p>Activity: {{activity}}</p>
                 <p>Skill Level: {{skillLevel}}</p>
                 <p>Details: {{details}}</p>
-                <p>Users:</p>
-                {{#each activities.users}}
-                    <p></p>
-                {{/each}}
+                <p>Users:
+                    {{#each users}}
+                        <span>{{name}}</span>
+                    {{/each}}
+                </p>
             </li>
         {{/each}}
     </ul>
