@@ -7,6 +7,9 @@
         <div class="navbar-inner">
             <img src="images/goat-white.png">
             <a class="brand">Breaking Trail</a>
+            {{#if currentUser}}
+                <img class="pull-right nav-user-img" src="{{currentUser.services.google.picture}}" width="40" height="40">
+            {{/if}}
             <div class="pull-right login-buttons-wrap">
                 {{> loginButtons}}
             </div>

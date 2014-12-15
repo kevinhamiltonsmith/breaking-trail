@@ -12,11 +12,28 @@
     text-shadow: none;
 }
 .hello-user {
-    margin-right: 5px;
+    margin: 0 5px 0 0;
+    padding: 10px 0;
+}
+.login-buttons-wrap {
+    padding: 10px 0;
 }
 #login-dropdown-list {
     right: 0;
     left: auto;
+}
+#login-buttons a {
+    color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 20px;
+}
+#login-dropdown-list a {
+    color: #000;
+}
+.nav-user-img {
+    border-radius: 20px;
+    margin-left: 20px;
+    width: 40px;
 }
 
 /* Add Activity */
