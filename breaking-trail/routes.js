@@ -39,6 +39,13 @@ Router.route('/details', function () {
     this.render('loginMessage');
   }
 });
+Router.route('/profile', function () {
+  if (Meteor.user()) { 
+    this.render('profile');
+  } else {
+    this.render('loginMessage');
+  }
+});
 
 
 

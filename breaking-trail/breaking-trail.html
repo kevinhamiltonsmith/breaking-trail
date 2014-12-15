@@ -4,23 +4,23 @@
 
 <body>
     <div class="navbar">
-        <div class="navbar-inner">
-            <img src="images/goat-white.png">
-            <a class="brand">Breaking Trail</a>
+        <div class="navbar-inner">    
+            <a class="brand" href="/activities"><img src="images/BreakTrail_Logo.png" width="40" height="40"> Breaking Trail</a>
             {{#if currentUser}}
-                <img class="pull-right nav-user-img" src="{{currentUser.services.google.picture}}" width="40" height="40">
+                <button class="btn pull-right"> Create Event </button>
+                <a href="/profile"><img class="pull-right nav-user-img" src="{{currentUser.services.google.picture}}" width="40" height="40"></a>
             {{/if}}
             <div class="pull-right login-buttons-wrap">
                 {{> loginButtons}}
             </div>
             {{#if currentUser}}
-                <p class="pull-right hello-user">Hello,</p>
+                <p class="pull-right hello-user">Hello, </p>
             {{else}}
                 <p class="pull-right hello-user">Login with a Google account to get started.</p>
             {{/if}}
         </div>
     </div>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid"> -->
 <!-- 
         <div class="activity-wrapper">
             {{#if currentUser}}
@@ -33,7 +33,7 @@
                 {{> activities}}
             {{/if}}
         </div> -->
-    </div>
+    <!-- </div> -->
 </body>
 
 <template name="home">
@@ -126,6 +126,12 @@
 <template name="details">
     <div class="container-fluid">
         <div>This is where details about your event go.</div>
+    </div>
+</template>
+
+<template name="profile">
+    <div class="container-fluid">
+        <div> Profile goes here.</div>
     </div>
 </template>
 
