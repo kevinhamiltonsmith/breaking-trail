@@ -3,17 +3,20 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Breaking Trail</h1>
-
-        <header>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand">Breaking Trail</a>
+            <div class="pull-right login-buttons-wrap">
+                {{> loginButtons}}
+            </div>
             {{#if currentUser}}
-                <h3>Hello {{currentUser.profile.name}}</h3>
+                <p class="pull-right hello-user">Hello {{currentUser.profile.name}}</p>
             {{else}}
-                <h3>Login with a Google account to get started.</h3>
+                <p class="pull-right hello-user">Login with a Google account to get started.</p>
             {{/if}}
-            {{> loginButtons}}
-        </header>
+        </div>
+    </div>
+    <div class="container-fluid">
 
         <div class="menu-wrapper">
             {{#if currentUser}}
