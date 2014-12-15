@@ -7,7 +7,7 @@
         <div class="navbar-inner">    
             <a class="brand" href="/activities"><img src="images/BreakTrail_Logo.png" width="40" height="40"> Breaking Trail</a>
             {{#if currentUser}}
-                <button class="btn pull-right"> Create Event </button>
+                <a class="btn pull-right" href="/activity">Create Event</a>
                 <a href="/profile"><img class="pull-right nav-user-img" src="{{currentUser.services.google.picture}}" width="40" height="40"></a>
             {{/if}}
             <div class="pull-right login-buttons-wrap">
