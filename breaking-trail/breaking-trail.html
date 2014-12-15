@@ -5,12 +5,13 @@
 <body>
     <div class="navbar">
         <div class="navbar-inner">
+            <img src="images/goat-white.png">
             <a class="brand">Breaking Trail</a>
             <div class="pull-right login-buttons-wrap">
                 {{> loginButtons}}
             </div>
             {{#if currentUser}}
-                <p class="pull-right hello-user">Hello {{currentUser.profile.name}}</p>
+                <p class="pull-right hello-user">Hello,</p>
             {{else}}
                 <p class="pull-right hello-user">Login with a Google account to get started.</p>
             {{/if}}
