@@ -13,3 +13,9 @@ Template.activities.events({
         Session.set("counter", Session.get("counter") + 1);
     }
 });
+
+Template.body.helpers({
+    tasks: function () {
+        return Tasks.find({});
+    }
+});
