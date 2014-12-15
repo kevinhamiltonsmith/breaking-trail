@@ -6,12 +6,39 @@
     <div class="container">
         <h1>Breaking Trail</h1>
 
-        {{> login}}
-        {{> loginButtons}}
+        <header>
+            {{#if currentUser}}
+                <h3>Hello {{currentUser.profile.name}}</h3>
+            {{else}}
+                <h3>Login with a Google account to get started.</h3>
+            {{/if}}
+            {{> loginButtons}}
+        </header>
+
+        <div class="menu-wrapper">
+            {{#if currentUser}}
+                {{> menu}}
+            {{/if}}
+        </div>
+
+        <div class="content-wrapper">
+            {{#if currentUser}}
+                {{> activities}}
+            {{/if}}
+        </div>
     </div>
 </body>
 
-<template name="login">
-    <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
+<template name="menu">
+    <ul>
+        <li>Add Activity</li>
+        <li>Profile</li>
+    </ul>
+</template>
+
+<template name="activities">
+    <ul>
+        <li>Activity 1</li>
+        <li>Activity 2</li>
+    </ul>
 </template>
