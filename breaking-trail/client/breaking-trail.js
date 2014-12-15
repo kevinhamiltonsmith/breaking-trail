@@ -3,14 +3,18 @@ Session.setDefault("counter", 0);
 
 Template.activities.helpers({
     counter: function () {
-        return Session.get("counter");
+        return Clicks.get("counter");
     }
 });
 
 Template.activities.events({
-    'click button': function () {
+    'click clickButton': function () {
         // increment the counter when button is clicked
-        Session.set("counter", Session.get("counter") + 1);
+        console.log("pushed");
+        CLicks.insert({
+            clickCount: "2"
+        });
+        // Clicks.set("counter", Session.get("counter") + 1);
     }
 });
 
