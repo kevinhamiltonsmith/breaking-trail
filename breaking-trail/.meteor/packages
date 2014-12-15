@@ -10,4 +10,5 @@ accounts-ui
 accounts-password
 accounts-google
 service-configuration
+bootstrap
 

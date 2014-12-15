@@ -21,6 +21,12 @@
             {{/if}}
         </div>
 
+        <div class="activity-wrapper">
+            {{#if currentUser}}
+                {{> activity}}
+            {{/if}}
+        </div>
+
         <div class="content-wrapper">
             {{#if currentUser}}
                 {{> activities}}
@@ -36,13 +42,37 @@
     </ul>
 </template>
 
+<template name="activity">
+    <form id="new-activity-form">
+        <div class="activity-select-wrap">
+            <label for="activity-type">Activity</label>
+            <select id="activity-type">
+                <option>Biking</option>
+                <option>Skiing</option>
+                <option>Running</option>
+            </select>
+        </div>
+        <div class="skill-level-btns-wrap">
+            <button>Beginner</button>
+            <button>Intermediate</button>
+            <button>Expert</button>
+        </div>
+        <div class="name-input-wrap">
+            <label for="activity-name">Name of Event</label>
+            <input type="text" id="activity-name" value="">
+        </div>
+        <div class="details-input-wrap">
+            <label for="activity-name">Details</label>
+            <textarea id="activity-details" value=""></textarea>
+        </div>
+        <input type="submit">
+    </form>
+</template>
+
 <template name="activities">
     <ul>
-        <li>Activity 1</li>
-        <li>Activity 2</li>
+        {{#each activities}}
+            <li>Event Name: {{name}}</li>
+        {{/each}}
     </ul>
-    <input type="button" id="clickButton" value="Click me">
-    {{#each count}}
-        <div>clickCount: {{clickCount}}</div>
-    {{/each}}
 </template>
