@@ -1,32 +1,18 @@
-// // counter starts at 0
-// Session.setDefault("counter", 0);
-
-// Template.activities.helpers({
-//     count: function () {
-//         return Clicks.find({});
-//     }
-// });
-
-// Template.activities.events({
-//     'click #clickButton': function () {
-//         // increment the counter when button is clicked
-//         var currentCount = Session.get('counter') + 1;
-//         Session.set('counter', currentCount);
-
-//         Clicks.insert({
-//             clickCount: currentCount
-//         });
-//     }
-// });
-
-Template.activity.helpers({
+Template.activities.helpers({
     activities: function() {
         return Events.find({});
     }
 });
 
 Template.activity.events({
-    'click #add-event': function() {
+    'click #create-event-btn': function() {
+        Events.insert({
+            activity: 'skiing',
+            details: 'here are the details',
+            name: 'snowbird',
+            skillLevel: 'expert'
+        });
 
+        return false;
     }
 });

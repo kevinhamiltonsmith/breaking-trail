@@ -53,9 +53,9 @@
             </select>
         </div>
         <div class="skill-level-btns-wrap">
-            <button>Beginner</button>
-            <button>Intermediate</button>
-            <button>Expert</button>
+            <input type="radio" name="skill-level" value="Beginner">Beginner
+            <input type="radio" name="skill-level" value="Intermediate">Intermediate
+            <input type="radio" name="skill-level" value="Expert" checked>Expert
         </div>
         <div class="name-input-wrap">
             <label for="activity-name">Name of Event</label>
@@ -65,14 +65,20 @@
             <label for="activity-name">Details</label>
             <textarea id="activity-details" value=""></textarea>
         </div>
-        <input type="submit">
+        <input id="create-event-btn" type="submit" value="Create Event">
     </form>
 </template>
 
 <template name="activities">
+    <h2>ALL ACTIVITIES</h2>
     <ul>
         {{#each activities}}
-            <li>Event Name: {{name}}</li>
+            <li>
+                <p>Name: {{name}}</p>
+                <p>Activity: {{activity}}</p>
+                <p>Skill Level: {{skillLevel}}</p>
+                <p>Details: {{details}}</p>
+            </li>
         {{/each}}
     </ul>
 </template>
