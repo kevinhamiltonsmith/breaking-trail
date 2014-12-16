@@ -11,7 +11,7 @@ Template.activity.rendered=function() {
 Template.activity.events({
     'click #create-event-btn': function() {
         var creator = Meteor.user().profile.name;
-
+        //Meteor.user().services.google.picture to get 
         Events.insert({
             activity: $( "#activity-type option:selected" ).text(),
             date: $('#activity-date').val(),
@@ -24,16 +24,13 @@ Template.activity.events({
         });
 
         return false;
+    },
+
+    'click #join-event-btn': function() {
+        console.log(this);
+        console.log("im here");
+        console.log(this);
+        // get the id 
+        // add to the events collection
     }
 });
-
-// Router.route('/homexxx', function () {
-//   // render the Home template with a custom data context
-//   this.render('home', {data: {title: 'My Title'}});
-// });
-
-// // when you navigate to "/one" automatically render the template named "One".
-// Router.route('/one');
-
-// // when you navigate to "/two" automatically render the template named "Two".
-// Router.route('/two');

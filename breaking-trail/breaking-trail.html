@@ -104,7 +104,7 @@
     <h2>ALL ACTIVITIES</h2>
         <ul>
             {{#each activities}}
-                <li>
+                <li class="single-activity" data-id="{{_id}}">
                     <p>Name: {{name}}</p>
                     <p>Date: {{date}}</p>
                     <p>Time: {{time}}</p>
@@ -118,6 +118,7 @@
                         {{/each}}
                     </p>
                 </li>
+                <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
             {{/each}}
         </ul>
     </div>
