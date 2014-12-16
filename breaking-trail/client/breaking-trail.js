@@ -4,6 +4,14 @@ Template.activities.helpers({
     }
 });
 
+Template.details.helpers({
+    details: function(id) {
+        console.log("the id: " + id);
+        return Events.findOne(id);
+    }
+});
+
+
 Template.activity.rendered=function() {
     $('#activity-date').datepicker();
 };
@@ -42,5 +50,11 @@ Template.activities.events({
                 { "users": newUser }
             }
         );
+    },
+
+    'click #show-event-btn': function(e) {
+        // var temp = $(e.currentTarget).closest(".single-activity").data("id");
+        // console.log(temp);
+        Router.go('details', $(e.currentTarget).closest(".single-activity").data("id"));    
     }
 });
