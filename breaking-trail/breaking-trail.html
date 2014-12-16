@@ -93,6 +93,8 @@
                         <option value="11:00 PM">11:00 PM</option>
                     </select>
                 </div>
+                <label class="new-activity-heading" for="activity-location">Location</label>
+                <input type="text" id="activity-location">
                 <label class="new-activity-heading" for="activity-duration">Duration</label>
                 <input type="text" id="activity-duration">
             </div>
@@ -116,6 +118,7 @@
                             <p>Duration: {{duration}}</p>
                             <p>Activity: {{activity}}</p>
                             <p>Details: {{details}}</p>
+                            <p>Location: {{location}}</p>
                             <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
                             <p>Users:
                                 {{#each users}}
@@ -142,6 +145,7 @@
                     <p>Activity: {{activity}}</p>
                     <p>Skill Level: {{skillLevel}}</p>
                     <p>Details: {{details.details}}</p>
+                    <p>Location: {{location}}</p>
                     <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
                     <p>Users:
                         {{#each users}}

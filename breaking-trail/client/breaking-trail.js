@@ -1,4 +1,4 @@
-var BT = {};
+window.BT = {};
 
 Template.activities.helpers({
     activities: function() {
@@ -30,6 +30,7 @@ Template.activity.events({
             details: $("#activity-details").val(),
             duration: $('#activity-duration').val(),
             name: $("#activity-name").val(),
+            location: $("#activity-location").val(),
             skillLevel: $(".skill-level-btns-wrap input[type=radio]:checked").attr("value"),
             time: $( "#activity-time option:selected" ).text(),
             creator: {name: creator, image: imageLink},
