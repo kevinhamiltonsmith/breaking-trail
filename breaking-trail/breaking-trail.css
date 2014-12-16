@@ -54,13 +54,6 @@ h2.logged-out-mesasge {
     margin-left: 20px;
     width: 60px;
 }
-
-.creator-img {
-    border-radius: 20px;
-    margin-left: 20px;
-    width: 40px;
-}
-
 .nav-user-img {
     border-radius: 30px;
     margin-left: 20px;
@@ -127,7 +120,54 @@ h2.logged-out-mesasge {
     margin: 0 0 10px;
     text-transform: uppercase;
 }
-
+.single-activity-activity {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.single-activity-date,
+.single-activity-start,
+.single-activity-duration,
+.single-activity-location {
+    background: #eee;
+    float: left;
+    margin-right: 10px;
+    padding: 7px 10px;
+    text-transform: uppercase;
+}
+.single-activity-date span,
+.single-activity-start span,
+.single-activity-duration span,
+.single-activity-location  span{
+    font-weight: bold;
+}
+.single-activity-creator-wrap,
+.single-activity-users-wrap {
+    clear: both;
+    margin-bottom: 10px;
+}
+.single-activity-creator-wrap span,
+.single-activity-users-wrap span {
+    display: inline-block;
+    width: 60px;
+}
+.creator-img {
+    border-radius: 20px;
+    margin-left: 5px;
+    width: 40px;
+}
+.join-event-btn {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+    height: 40px;
+    margin-left: 5px;
+    width: 40px;
+}
+.join-event-btn:hover {
+    background: #000;
+    color: #fff;
+}
 
 
 /* Add Activity */
