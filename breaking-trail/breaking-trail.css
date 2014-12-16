@@ -7,6 +7,12 @@
 .container-fluid {
     padding: 0 40px;
 }
+.logged-out-mesasge {
+    text-align: center;
+}
+h2.logged-out-mesasge {
+    margin-bottom: 30px;
+}
 
 /* Nav */
 .navbar-inner {
