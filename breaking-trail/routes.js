@@ -21,6 +21,7 @@ Router.route('/home', function () {
 Router.route('/activity', function () {
   if (Meteor.user()) { 
     this.render('activity');
+    loadScript();
   } else {
     this.render('loginMessage');
   }
@@ -35,6 +36,7 @@ Router.route('/activities', function () {
 Router.route('/details', function () {
   if (Meteor.user()) { 
     this.render('details');
+    loadScript();
   } else {
     this.render('loginMessage');
   }
