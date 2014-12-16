@@ -53,6 +53,7 @@ Template.activity.events({
             duration: $('#activity-duration').val(),
             name: $("#activity-name").val(),
             location: $("#activity-location").val(),
+            latlng: $("#latlng").val(),
             skillLevel: $(".skill-level-btns-wrap input[type=radio]:checked").attr("value"),
             time: $( "#activity-time option:selected" ).text(),
             points: points,

@@ -1,5 +1,51 @@
 <head>
   <title>Breaking Trail - Backcountry</title>
+    <script type="text/javascript">
+
+        // global "map" variable
+        var map = null;
+        var marker = null;
+
+        function initializeMap() {
+          var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(40.719999, -111.541682),
+            mapTypeControl: true,
+            mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+            navigationControl: true,
+            mapTypeId: google.maps.MapTypeId.HYBRID 
+          };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            google.maps.event.addListener(map,'click',function(event) {
+                document.getElementById('latlng').value = event.latLng.lat() + ', ' + event.latLng.lng()
+            }); 
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(event.latLng);
+            });
+
+        }
+        function loadScript() {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDiXho7m2pv5ACcl6aikr5kK5ChnJthscE&v=3.exp&callback=initializeMap';
+          document.body.appendChild(script);
+        }
+
+
+        function placeMarker(location) {
+          if ( marker ) {
+            marker.setPosition(location);
+          } else {
+            marker = new google.maps.Marker({
+              position: location,
+              map: map
+            });
+          }
+        }
+    </script>
 </head>
 
 <body>
@@ -102,6 +148,8 @@
                 <input type="text" id="activity-location">
             </div>
             <input id="create-event-btn" type="submit" value="Create Event">
+            <div id="map-canvas" style="width: 800px; height: 600px"></div>
+            <p><input id="latlng" name="latlng" type="text"></p>
         </form>
     </div>
 </template>
@@ -110,7 +158,7 @@
     <div class="container-fluid">
     <h2 class="page-heading">ALL ACTIVITIES</h2>
         <div class="row-fluid">
-            <ul class="all-activities-list span7">
+            <ul class="all-activities-list span8">
                 {{#each activities}}
                     <li class="single-activity clearfix" data-id="{{_id}}">
                         <div class="single-activity-skill {{skillLevel}}"></div>
@@ -135,7 +183,9 @@
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
                         </div>
-                        <div class="activity-trail-points">{{points}} Pts</div>
+                        {{#if points}}
+                            <div class="activity-trail-points">{{points}} Pts</div>
+                        {{/if}}
                     </li>
                 {{/each}}
             </ul>
@@ -148,7 +198,7 @@
         <h5 id="back-event-btn" style="cursor: pointer;">&lt; BACK TO ALL ACTIVITIES</h5>
         <h2 class="page-heading">ACTIVITY DETAILS</h2>
         <div class="row-fluid">
-            <ul class="all-activities-list span7">
+            <ul class="all-activities-list span8">
                 {{#with details}}
                     <li class="single-activity clearfix" data-id="{{_id}}">
                         <div class="single-activity-skill {{skillLevel}}"></div>
@@ -162,6 +212,7 @@
                                 <p class="single-activity-duration">Duration: <span>{{duration}}</span></p>
                             {{/if}}
                             <p class="single-activity-location">Location: <span>{{location}}</span></p>
+                            <p class="single-activity-location">LatLong: <span>{{latlng}}</span></p>
                             <div class="single-activity-creator-wrap" data-placement="top" title="{{creator.name}}">
                                 <span>Creator:</span> <img class="creator-img" src="{{creator.image}}" width="40" height="40">
                             </div>
@@ -172,22 +223,26 @@
                                 {{/each}}
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
+                            <div class="take-gear-wrap">
+                                <span>Gear to take with you:</span>
+                                {{#each gearItems}}
+                                    <a href="{{bcLink}}" target="_blank"><img class="gear-img" src="{{imageLink}}" width="40" height="40"></a>
+                                {{/each}}
+                            </div>
                         </div>
-                        <p>This this with you:
-                            {{#each gearItems}}
-                                <a href="{{bcLink}}" target="_blank"><img class="creator-img" src="{{imageLink}}" width="40" height="40"></a>
-                            {{/each}}
-                        </p>
-
-
                         {{#if points}}
                             <div class="activity-trail-points">{{points}} Pts</div>
                         {{/if}}
                     </li>
                 {{/with}}
             </ul>
+            <div class="span4">
+                <img src="/images/canyons-map.jpeg">
+            </div>
         </div>
+        <div id="map-canvas" style="width: 800px; height: 600px"></div>
     </div>
+    
 </template>
 
 <template name="profile">
