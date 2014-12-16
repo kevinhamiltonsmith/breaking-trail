@@ -25,7 +25,7 @@ Template.activity.events({
             BT.sortMethod = "newEvent";
             Router.go('activities');
         };
-        var points = Math.floor(Math.random() * (5 - 1)) + 1;
+        var points = Math.floor(Math.random() * (8 - 2)) + 1;
 
         Events.insert({
             activity: $( "#activity-type option:selected" ).text(),
@@ -38,7 +38,8 @@ Template.activity.events({
             time: $( "#activity-time option:selected" ).text(),
             points: points,
             creator: {name: creator, image: imageLink},
-            users: []
+            users: [],
+            gearItems: [{imageLink: "images/"+points+".jpg", bcLink: "http://www.backcountry.com/"}, {imageLink: "images/"+(points+1)+".jpg", bcLink: "http://www.backcountry.com/"}, {imageLink: "images/"+(points-1)+".jpg", bcLink: "http://www.backcountry.com/"}]
         }, insertResult);
         return false;
     }
