@@ -158,7 +158,7 @@
     <div class="container-fluid">
     <h2 class="page-heading">ALL ACTIVITIES</h2>
         <div class="row-fluid">
-            <ul class="all-activities-list span7">
+            <ul class="all-activities-list span8">
                 {{#each activities}}
                     <li class="single-activity clearfix" data-id="{{_id}}">
                         <div class="single-activity-skill {{skillLevel}}"></div>
@@ -197,7 +197,7 @@
     <div class="container-fluid">
         <h2 class="page-heading">ACTIVITY DETAILS</h2>
         <div class="row-fluid">
-            <ul class="all-activities-list span7">
+            <ul class="all-activities-list span8">
                 {{#with details}}
                     <li class="single-activity clearfix" data-id="{{_id}}">
                         <div class="single-activity-skill {{skillLevel}}"></div>
@@ -235,6 +235,9 @@
                     </li>
                 {{/with}}
             </ul>
+            <div class="span4">
+                <img src="/images/canyons-map.jpeg">
+            </div>
         </div>
         <div id="map-canvas" style="width: 800px; height: 600px"></div>
     </div>
