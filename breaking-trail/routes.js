@@ -35,10 +35,6 @@ Router.route('/activities', function () {
 Router.route('/details', function () {
   if (Meteor.user()) { 
     this.render('details');
-    // details: function(id) {
-    //     console.log(id)
-    //     return Events.find({id});
-    // }
   } else {
     this.render('loginMessage');
   }

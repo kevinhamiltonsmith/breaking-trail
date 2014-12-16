@@ -36,15 +36,9 @@
             <div class="new-activity-section activity-select-wrap">
                 <label for="activity-type">Activity</label>
                 <select id="activity-type">
-                    <option>Climb</option>
-                    <option>Fish</option>
-                    <option>Hike</option>
-                    <option>Mountain Bike</option>
-                    <option>Road Bike</option>
-                    <option>Run</option>
-                    <option>Ski</option>
-                    <option>Snowboard</option>
-                    <option>Other</option>
+                    <option>Biking</option>
+                    <option>Skiing</option>
+                    <option>Running</option>
                 </select>
             </div>
             <div class="new-activity-section skill-level-btns-wrap clearfix">
@@ -65,34 +59,30 @@
                 <textarea id="activity-details" value=""></textarea>
             </div>
             <div class="new-activity-section date-time-input-wrap">
-                <div class="date-select-wrap">
-                    <label class="new-activity-heading" for="activity-date">Date</label>
-                    <input type="text" class="form-control" id="activity-date">
-                </div>
-                <div class="time-select-wrap">
-                    <label class="new-activity-heading" for="activity-time">Time</label>
-                    <select name="time" id="activity-time">
-                        <option value="5:00 AM">5:00 AM</option>
-                        <option value="6:00 AM">6:00 AM</option>
-                        <option value="7:00 AM">7:00 AM</option>
-                        <option value="8:00 AM">8:00 AM</option>
-                        <option value="9:00 AM">9:00 AM</option>
-                        <option value="10:00 AM">10:00 AM</option>
-                        <option value="11:00 AM">11:00 AM</option>
-                        <option value="12:00 PM">12:00 PM</option>
-                        <option value="1:00 PM">1:00 PM</option>
-                        <option value="2:00 PM">2:00 PM</option>
-                        <option value="3:00 PM">3:00 PM</option>
-                        <option value="4:00 PM">4:00 PM</option>
-                        <option value="5:00 PM">5:00 PM</option>
-                        <option value="6:00 PM">6:00 PM</option>
-                        <option value="7:00 PM">7:00 PM</option>
-                        <option value="8:00 PM">8:00 PM</option>
-                        <option value="9:00 PM">9:00 PM</option>
-                        <option value="10:00 PM">10:00 PM</option>
-                        <option value="11:00 PM">11:00 PM</option>
-                    </select>
-                </div>
+                <label class="new-activity-heading" for="activity-date">Date</label>
+                <input type="text" class="form-control" id="activity-date">
+                <label class="new-activity-heading" for="activity-time">Time</label>
+                <select name="time" id="activity-time">
+                    <option value="5:00 AM">5:00 AM</option>
+                    <option value="6:00 AM">6:00 AM</option>
+                    <option value="7:00 AM">7:00 AM</option>
+                    <option value="8:00 AM">8:00 AM</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="8:00 PM">8:00 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+                    <option value="11:00 PM">11:00 PM</option>
+                </select>
                 <label class="new-activity-heading" for="activity-duration">Duration</label>
                 <input type="text" id="activity-duration">
             </div>
@@ -129,26 +119,24 @@
 
 <template name="details">
     <div class="container-fluid">
-        <div>This is where details about your event go.</div>
-        <ul>
-            {{details}}
-            <li class="single-activity" data-id="{{_id}}">
-                <p id="show-event-btn">Name: {{name}}</p>
-                <p>Date: {{date}}</p>
-                <p>Time: {{time}}</p>
-                <p>Duration: {{duration}}</p>
-                <p>Activity: {{activity}}</p>
-                <p>Skill Level: {{skillLevel}}</p>
-                <p>Details: {{details}}</p>
-                <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
-                <p>Users:
-                    {{#each users}}
-                        <span data-placement="top" title="{{name}}"><img class="creator-img" src="{{image}}" width="40" height="40"></span>
-                    {{/each}}
-                </p>
-            </li>
-            <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
-    </ul>
+            {{#with details}}
+                <div class="single-activity" data-id="{{_id}}">
+                    <p id="show-event-btn">Name: {{name}}</p>
+                    <p>Date: {{date}}</p>
+                    <p>Time: {{time}}</p>
+                    <p>Duration: {{duration}}</p>
+                    <p>Activity: {{activity}}</p>
+                    <p>Skill Level: {{skillLevel}}</p>
+                    <p>Details: {{details.details}}</p>
+                    <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
+                    <p>Users:
+                        {{#each users}}
+                            <span data-placement="top" title="{{name}}"><img class="creator-img" src="{{image}}" width="40" height="40"></span>
+                        {{/each}}
+                    </p>
+                </div>
+                <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
+            {{/with}}
     </div>
 </template>
 

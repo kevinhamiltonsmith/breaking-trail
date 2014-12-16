@@ -1,3 +1,10 @@
+var BT = {};
+Handlebars.registerHelper("eventId", function() {
+   blah = Session.get('blah');
+   // code to do stuff with blah
+   return blah;
+});
+
 Template.activities.helpers({
     activities: function() {
         return Events.find({});
@@ -5,12 +12,10 @@ Template.activities.helpers({
 });
 
 Template.details.helpers({
-    details: function(id) {
-        console.log("the id: " + id);
-        return Events.findOne(id);
+    details: function( ) {
+        return Events.findOne(BT.detailsEventId);
     }
 });
-
 
 Template.activity.rendered=function() {
     $('#activity-date').datepicker();
@@ -20,7 +25,10 @@ Template.activity.events({
     'click #create-event-btn': function() {
         var creator = Meteor.user().profile.name;
         var imageLink = Meteor.user().services.google.picture;
-
+        var insertResult = function(error, id) {
+            BT.newEvent = id;
+            BT.sortMethod = "newEvent";
+        };
         Events.insert({
             activity: $( "#activity-type option:selected" ).text(),
             date: $('#activity-date').val(),
@@ -31,7 +39,7 @@ Template.activity.events({
             time: $( "#activity-time option:selected" ).text(),
             creator: {name: creator, image: imageLink},
             users: []
-        });
+        }, insertResult);
 
         return false;
     }
@@ -53,8 +61,10 @@ Template.activities.events({
     },
 
     'click #show-event-btn': function(e) {
-        // var temp = $(e.currentTarget).closest(".single-activity").data("id");
+        var temp = $(e.currentTarget).closest(".single-activity").data("id");
         // console.log(temp);
-        Router.go('details', $(e.currentTarget).closest(".single-activity").data("id"));    
+        // Session.set(eventId, temp)
+        BT.detailsEventId = temp;
+        Router.go('details');    
     }
 });
