@@ -32,6 +32,7 @@
 
 <template name="activity">
     <div class="container-fluid">
+        <h2 class="page-heading">CREATE NEW EVENT</h2>
         <form class="new-activity-form" id="new-activity-form">
             <div class="new-activity-section activity-select-wrap">
                 <label for="activity-type">Activity</label>
@@ -93,10 +94,12 @@
                         <option value="11:00 PM">11:00 PM</option>
                     </select>
                 </div>
+                <div class="duration-select-wrap">
+                    <label class="new-activity-heading" for="activity-duration">Duration</label>
+                    <input type="text" id="activity-duration">
+                </div>
                 <label class="new-activity-heading" for="activity-location">Location</label>
                 <input type="text" id="activity-location">
-                <label class="new-activity-heading" for="activity-duration">Duration</label>
-                <input type="text" id="activity-duration">
             </div>
             <input id="create-event-btn" type="submit" value="Create Event">
         </form>
@@ -105,7 +108,7 @@
 
 <template name="activities">
     <div class="container-fluid">
-    <h2>ALL ACTIVITIES</h2>
+    <h2 class="page-heading">ALL ACTIVITIES</h2>
         <div class="row-fluid">
             <ul class="all-activities-list span7">
                 {{#each activities}}
@@ -125,14 +128,14 @@
                                 <span>Creator:</span> <img class="creator-img" src="{{creator.image}}" width="40" height="40">
                             </div>
                             <div class="single-activity-users-wrap">
-                                <span>Users:</span>
+                                <span>Joined ({{users.length}}):</span>
                                 {{#each users}}
                                     <img class="creator-img" src="{{image}}" width="40" height="40">
                                 {{/each}}
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
                         </div>
-                        <p>Trail Points: {{points}}</p>
+                        <div class="activity-trail-points">{{points}} Pts</div>
                     </li>
                 {{/each}}
             </ul>
@@ -142,8 +145,7 @@
 
 <template name="details">
     <div class="container-fluid">
-
-        <h2>ACTIVITY DETAILS</h2>
+        <h2 class="page-heading">ACTIVITY DETAILS</h2>
         <div class="row-fluid">
             <ul class="all-activities-list span7">
                 {{#with details}}
@@ -163,14 +165,16 @@
                                 <span>Creator:</span> <img class="creator-img" src="{{creator.image}}" width="40" height="40">
                             </div>
                             <div class="single-activity-users-wrap">
-                                <span>Users:</span>
+                                <span>Joined:</span>
                                 {{#each users}}
                                     <img class="creator-img" src="{{image}}" width="40" height="40">
                                 {{/each}}
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
                         </div>
-                        <p>Trail Points: {{points}}</p>
+                        {{#if points}}
+                            <div class="activity-trail-points">{{points}} Pts</div>
+                        {{/if}}
                     </li>
                 {{/with}}
             </ul>

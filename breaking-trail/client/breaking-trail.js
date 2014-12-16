@@ -26,7 +26,7 @@ Template.activity.events({
             Router.go('activities');
         };
         var points = Math.floor(Math.random() * (5 - 1)) + 1;
-        console.log("points", points);
+
         Events.insert({
             activity: $( "#activity-type option:selected" ).text(),
             date: $('#activity-date').val(),

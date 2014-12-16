@@ -16,6 +16,9 @@ body {
 h2.logged-out-mesasge {
     margin-bottom: 30px;
 }
+.page-heading {
+    margin-bottom: 30px;
+}
 
 /* Nav */
 .navbar-inner {
@@ -63,7 +66,7 @@ h2.logged-out-mesasge {
     padding: 10px 0;
 }
 .navbar .create-event-btn {
-    background: #CF8929;
+    background: #e48325;
     border: none;
     border-radius: 2px;
     color: #333;
@@ -138,18 +141,24 @@ h2.logged-out-mesasge {
 .single-activity-date span,
 .single-activity-start span,
 .single-activity-duration span,
-.single-activity-location  span{
+.single-activity-location  span {
     font-weight: bold;
+}
+.single-activity-location {
+    margin-bottom: 15px;
 }
 .single-activity-creator-wrap,
 .single-activity-users-wrap {
     clear: both;
-    margin-bottom: 10px;
 }
 .single-activity-creator-wrap span,
 .single-activity-users-wrap span {
     display: inline-block;
-    width: 60px;
+    font-weight: bold;
+    width: 80px;
+}
+.single-activity-creator-wrap {
+    margin-bottom: 15px;
 }
 .creator-img {
     border-radius: 20px;
@@ -168,17 +177,28 @@ h2.logged-out-mesasge {
     background: #000;
     color: #fff;
 }
+.activity-trail-points {
+    background: #e48325;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
 
 
 /* Add Activity */
 .new-activity-section {
     margin-bottom: 10px;
-    width: 310px;
+    width: 510px;
 }
 .new-activity-form select,
 .new-activity-form textarea,
 .new-activity-form input {
-    width: 300px;
+    width: 500px;
 }
 .new-activity-form select {
     height: 38px;
@@ -187,7 +207,7 @@ h2.logged-out-mesasge {
     padding: 18px 6px;
 }
 .new-activity-heading {
-    color: #777;
+    color: #000;
     margin-bottom: 5px;
 }
 .skill-radio {
@@ -226,22 +246,25 @@ h2.logged-out-mesasge {
     margin-left: 10px;
 }
 .date-select-wrap,
-.time-select-wrap {
+.time-select-wrap,
+.duration-select-wrap {
     float: left;
-    width: 145px;
+    width: 160px;
 }
-.time-select-wrap {
+.time-select-wrap,
+.duration-select-wrap {
     margin-left: 10px;
 }
 #activity-date,
-#activity-time {
+#activity-time,
+#activity-duration {
     width: 100%;
 }
 #activity-details {
     height: 140px;
 }
 #create-event-btn {
-    background: #CF8929;
+    background: #e48325;
     border: none;
     border-radius: 2px;
     color: #fff;
