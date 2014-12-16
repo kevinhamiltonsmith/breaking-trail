@@ -40,6 +40,18 @@
     margin-left: 20px;
     width: 60px;
 }
+
+.creator-img {
+    border-radius: 20px;
+    margin-left: 20px;
+    width: 40px;
+}
+
+.nav-user-img {
+    border-radius: 30px;
+    margin-left: 20px;
+    width: 60px;
+}
 .create-event-btn {
     background: #cf8929;
     border: none;
