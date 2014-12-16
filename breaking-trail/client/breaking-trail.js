@@ -87,3 +87,23 @@ Template.activities.events({
         Router.go('details');
     }
 });
+
+Template.details.events({
+    'click #join-event-btn': function() {
+        var name = Meteor.user().profile.name,
+            imageLink = Meteor.user().services.google.picture,
+            newUser = this.users;
+
+        newUser.push({name: name, image: imageLink});
+
+        Events.update(
+            {_id: this._id},
+            { $set:
+                { "users": newUser }
+            }
+        );
+    },
+    'click #back-event-btn': function() {
+        Router.go('activities');
+    }
+});
