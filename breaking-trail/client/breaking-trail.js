@@ -21,6 +21,7 @@ Template.activities.rendered = function() {
         }, 1200);
         BT.newEvent = null;
     }
+    $('.js-tooltip').tooltip();
 };
 
 Template.details.helpers({
@@ -29,7 +30,11 @@ Template.details.helpers({
     }
 });
 
-Template.activity.rendered=function() {
+Template.details.rendered = function() {
+    $('.js-tooltip').tooltip();
+};
+
+Template.activity.rendered = function() {
     $('#activity-date').datepicker();
 };
 

@@ -178,13 +178,13 @@
                                 <p class="single-activity-duration">Duration: <span>{{duration}}</span></p>
                             {{/if}}
                             <p class="single-activity-location">Location: <span>{{location}}</span></p>
-                            <div class="single-activity-creator-wrap" data-placement="top" title="{{creator.name}}">
-                                <span>Creator:</span> <img class="creator-img" src="{{creator.image}}" width="40" height="40">
+                            <div class="single-activity-creator-wrap">
+                                <span>Creator:</span> <img class="creator-img js-tooltip" data-placement="top" title="{{creator.name}}" src="{{creator.image}}" width="40" height="40">
                             </div>
                             <div class="single-activity-users-wrap">
                                 <span>Joined ({{users.length}}):</span>
                                 {{#each users}}
-                                    <img class="creator-img" src="{{image}}" width="40" height="40">
+                                    <img title="{{name}}" data-placement="top" class="creator-img js-tooltip" src="{{image}}" width="40" height="40">
                                 {{/each}}
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
@@ -219,12 +219,12 @@
                             {{/if}}
                             <p class="single-activity-location">Location: <span>{{location}}</span></p>
                             <div class="single-activity-creator-wrap" data-placement="top" title="{{creator.name}}">
-                                <span>Creator:</span> <img class="creator-img" src="{{creator.image}}" width="40" height="40">
+                                <span>Creator:</span> <img title="{{creator.name}}" data-placement="top" class="creator-img js-tooltip" src="{{creator.image}}" width="40" height="40">
                             </div>
                             <div class="single-activity-users-wrap">
                                 <span>Joined:</span>
                                 {{#each users}}
-                                    <img class="creator-img" src="{{image}}" width="40" height="40">
+                                    <img class="creator-img js-tooltip" data-placement="top" title="{{name}}" src="{{image}}" width="40" height="40">
                                 {{/each}}
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
