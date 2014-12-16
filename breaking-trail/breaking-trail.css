@@ -1,3 +1,4 @@
+
 /* Global */
 * {
    -moz-box-sizing:    border-box;
@@ -18,6 +19,10 @@ h2.logged-out-mesasge {
 }
 .page-heading {
     margin-bottom: 30px;
+}
+.map-canvas-create,
+#latlng {
+    display: none;
 }
 
 /* Nav */
@@ -180,6 +185,9 @@ h2.logged-out-mesasge {
 .join-event-btn:hover {
     background: #000;
     color: #fff;
+}
+.join-event-btn:focus {
+    outline: none;
 }
 .activity-trail-points {
     background: #e48325;
