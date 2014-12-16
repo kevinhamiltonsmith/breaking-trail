@@ -33,7 +33,7 @@
 <template name="activity">
     <div class="container-fluid">
         <form class="new-activity-form" id="new-activity-form">
-            <div class="activity-select-wrap">
+            <div class="new-activity-section activity-select-wrap">
                 <label for="activity-type">Activity</label>
                 <select id="activity-type">
                     <option>Biking</option>
@@ -41,8 +41,8 @@
                     <option>Running</option>
                 </select>
             </div>
-            <div class="skill-level-btns-wrap clearfix">
-                <p for="activity-skill">Your Skill Level</p>
+            <div class="new-activity-section skill-level-btns-wrap clearfix">
+                <p class="new-activity-heading" for="activity-skill">Your Skill Level</p>
                 <input class="skill-radio" type="radio" name="skill-level" value="Beginner" id="skill-beginner">
                 <label class="skill-radio-label beginner" for="skill-beginner">Beginner</label>
                 <input class="skill-radio" type="radio" name="skill-level" value="Intermediate" id="skill-intermediate">
@@ -50,18 +50,18 @@
                 <input class="skill-radio" type="radio" name="skill-level" value="Expert" id="skill-expert">
                 <label class="skill-radio-label expert" for="skill-expert">Expert</label>
             </div>
-            <div class="name-input-wrap">
-                <label for="activity-name">Name of Event</label>
+            <div class="new-activity-section name-input-wrap">
+                <label class="new-activity-heading" for="activity-name">Name of Event</label>
                 <input type="text" id="activity-name" value="">
             </div>
-            <div class="details-input-wrap">
-                <label for="activity-name">Details</label>
+            <div class="new-activity-section details-input-wrap">
+                <label class="new-activity-heading" for="activity-name">Details</label>
                 <textarea id="activity-details" value=""></textarea>
             </div>
-            <div class="date-time-input-wrap">
-                <label for="activity-date">Date</label>
+            <div class="new-activity-section date-time-input-wrap">
+                <label class="new-activity-heading" for="activity-date">Date</label>
                 <input type="text" class="form-control" id="activity-date">
-                <label for="activity-time">Time</label>
+                <label class="new-activity-heading" for="activity-time">Time</label>
                 <select name="time" id="activity-time">
                     <option value="5:00 AM">5:00 AM</option>
                     <option value="6:00 AM">6:00 AM</option>
@@ -83,7 +83,7 @@
                     <option value="10:00 PM">10:00 PM</option>
                     <option value="11:00 PM">11:00 PM</option>
                 </select>
-                <label for="activity-duration">Duration</label>
+                <label class="new-activity-heading" for="activity-duration">Duration</label>
                 <input type="text" id="activity-duration">
             </div>
             <input id="create-event-btn" type="submit" value="Create Event">
