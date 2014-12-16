@@ -32,7 +32,7 @@
 
 <template name="activity">
     <div class="container-fluid">
-        <form id="new-activity-form">
+        <form class="new-activity-form" id="new-activity-form">
             <div class="activity-select-wrap">
                 <label for="activity-type">Activity</label>
                 <select id="activity-type">
@@ -41,11 +41,14 @@
                     <option>Running</option>
                 </select>
             </div>
-            <div class="skill-level-btns-wrap">
-                <label for="activity-skill">Your Skill Level</label>
-                <input type="radio" name="skill-level" value="Beginner">Beginner
-                <input type="radio" name="skill-level" value="Intermediate">Intermediate
-                <input type="radio" name="skill-level" value="Expert" checked>Expert
+            <div class="skill-level-btns-wrap clearfix">
+                <p for="activity-skill">Your Skill Level</p>
+                <input class="skill-radio" type="radio" name="skill-level" value="Beginner" id="skill-beginner">
+                <label class="skill-radio-label beginner" for="skill-beginner">Beginner</label>
+                <input class="skill-radio" type="radio" name="skill-level" value="Intermediate" id="skill-intermediate">
+                <label class="skill-radio-label intermediate" for="skill-intermediate">Intermediate</label>
+                <input class="skill-radio" type="radio" name="skill-level" value="Expert" id="skill-expert">
+                <label class="skill-radio-label expert" for="skill-expert">Expert</label>
             </div>
             <div class="name-input-wrap">
                 <label for="activity-name">Name of Event</label>
