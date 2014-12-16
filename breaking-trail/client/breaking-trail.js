@@ -23,7 +23,10 @@ Template.activity.events({
         var insertResult = function(error, id) {
             BT.newEvent = id;
             BT.sortMethod = "newEvent";
+            Router.go('activities');
         };
+        var points = Math.floor(Math.random() * (5 - 1)) + 1;
+        console.log("points", points);
         Events.insert({
             activity: $( "#activity-type option:selected" ).text(),
             date: $('#activity-date').val(),
@@ -33,10 +36,10 @@ Template.activity.events({
             location: $("#activity-location").val(),
             skillLevel: $(".skill-level-btns-wrap input[type=radio]:checked").attr("value"),
             time: $( "#activity-time option:selected" ).text(),
+            points: points,
             creator: {name: creator, image: imageLink},
             users: []
         }, insertResult);
-
         return false;
     }
 });
