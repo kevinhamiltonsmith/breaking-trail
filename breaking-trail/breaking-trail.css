@@ -57,19 +57,23 @@
     margin-left: 20px;
     width: 60px;
 }
-.create-event-btn {
-    background: #cf8929;
-    border: none;
-    color: #000;
-    text-shadow: none;
-}
 .nav-right {
     padding: 10px 0;
 }
 .navbar .create-event-btn {
+    background: #CF8929;
+    border: none;
+    border-radius: 2px;
+    color: #333;
     font-size: 15px;
     font-weight: bold;
-    margin: 15px 0 0 20px;
+    margin: 12px 0 0 20px;
+    padding: 8px 15px;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+.navbar .create-event-btn:hover {
+    background: #aaa;
 }
 .navbar .create-event-btn i {
     margin: 2px 2px 0 0;
@@ -99,10 +103,17 @@
 .skill-radio {
     display: none;
 }
-.skill-radio:checked + .skill-radio-label {
-    color: red;
+.skill-radio:checked + .skill-radio-label.beginner {
+    background-color: #ABCF3B;
+}
+.skill-radio:checked + .skill-radio-label.intermediate {
+    background-color: #61B6CB;
+}
+.skill-radio:checked + .skill-radio-label.expert {
+    background-color: #222;
 }
 .skill-radio-label {
+    background: #ccc;
     border-radius: 3px;
     color: #fff;
     float: left;
@@ -111,18 +122,45 @@
     padding: 10px 14px;
     text-transform: uppercase;
 }
+.skill-radio-label.beginner:hover {
+    background-color: #ABCF3B;
+}
+.skill-radio-label.intermediate:hover {
+    background-color: #61B6CB;
+}
+.skill-radio-label.expert:hover {
+    background-color: #222;
+}
 .skill-radio-label.intermediate,
 .skill-radio-label.expert {
     margin-left: 10px;
 }
-.skill-radio-label.beginner {
-    background-color: #ABCF3B;
+.date-select-wrap,
+.time-select-wrap {
+    float: left;
+    width: 145px;
 }
-.skill-radio-label.intermediate {
-    background-color: #61B6CB;
+.time-select-wrap {
+    margin-left: 10px;
 }
-.skill-radio-label.expert {
-    background-color: #717370;
+#activity-date,
+#activity-time {
+    width: 100%;
+}
+#activity-details {
+    height: 140px;
+}
+#create-event-btn {
+    background: #CF8929;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#create-event-btn:hover {
+    background: #aaa;
 }
 
 
