@@ -7,6 +7,12 @@
 .container-fluid {
     padding: 0 40px;
 }
+.logged-out-mesasge {
+    text-align: center;
+}
+h2.logged-out-mesasge {
+    margin-bottom: 30px;
+}
 
 /* Nav */
 .navbar-inner {
@@ -78,6 +84,14 @@
 .navbar .create-event-btn i {
     margin: 2px 2px 0 0;
 }
+
+
+
+/* All Activities */
+.all-activities-list {
+    
+}
+
 
 
 /* Add Activity */
