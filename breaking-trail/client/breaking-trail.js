@@ -37,7 +37,7 @@ Template.activity.events({
     'click #create-event-btn': function() {
         var creator = Meteor.user().profile.name,
             imageLink = Meteor.user().services.google.picture,
-            points = Math.floor(Math.random() * (8 - 2)) + 1;
+            points = Math.floor(Math.random() * (8 - 2)) + 2;
         
         var insertResult = function(error, id) {
             BT.newEvent = id;
