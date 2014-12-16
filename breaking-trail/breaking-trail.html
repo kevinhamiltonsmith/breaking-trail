@@ -183,7 +183,9 @@
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
                         </div>
-                        <div class="activity-trail-points">{{points}} Pts</div>
+                        {{#if points}}
+                            <div class="activity-trail-points">{{points}} Pts</div>
+                        {{/if}}
                     </li>
                 {{/each}}
             </ul>
@@ -220,14 +222,13 @@
                                 {{/each}}
                                 <button class="join-event-btn" id="join-event-btn">Join</button>
                             </div>
+                            <div class="take-gear-wrap">
+                                <span>Gear to take with you:</span>
+                                {{#each gearItems}}
+                                    <a href="{{bcLink}}" target="_blank"><img class="gear-img" src="{{imageLink}}" width="40" height="40"></a>
+                                {{/each}}
+                            </div>
                         </div>
-                        <p>This this with you:
-                            {{#each gearItems}}
-                                <a href="{{bcLink}}" target="_blank"><img class="creator-img" src="{{imageLink}}" width="40" height="40"></a>
-                            {{/each}}
-                        </p>
-
-
                         {{#if points}}
                             <div class="activity-trail-points">{{points}} Pts</div>
                         {{/if}}
