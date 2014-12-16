@@ -1,6 +1,6 @@
 Template.activities.helpers({
     activities: function() {
-        return Events.find({});
+        return Events.find({}, {sort: [["date", "asc"], ["time", "desc"]]});
     }
 });
 

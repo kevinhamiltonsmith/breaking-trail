@@ -17,7 +17,7 @@
                 {{#if currentUser}}
                     <p class="pull-right hello-user">Hello, </p>
                 {{else}}
-                    <p class="pull-right hello-user">Login with a Google account to get started.</p>
+                    <p class="pull-right hello-user">Sign in with a Google account to get started.</p>
                 {{/if}}
             </div>
         </div>
@@ -104,26 +104,28 @@
 <template name="activities">
     <div class="container-fluid">
     <h2>ALL ACTIVITIES</h2>
-        <ul>
-            {{#each activities}}
-                <li class="single-activity" data-id="{{_id}}">
-                    <p>Name: {{name}}</p>
-                    <p>Date: {{date}}</p>
-                    <p>Time: {{time}}</p>
-                    <p>Duration: {{duration}}</p>
-                    <p>Activity: {{activity}}</p>
-                    <p>Skill Level: {{skillLevel}}</p>
-                    <p>Details: {{details}}</p>
-                    <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
-                    <p>Users:
-                        {{#each users}}
-                            <span data-placement="top" title="{{name}}"><img class="creator-img" src="{{image}}" width="40" height="40"></span>
-                        {{/each}}
-                    </p>
-                </li>
-                <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
-            {{/each}}
-        </ul>
+        <div class="row-fluid">
+            <ul class="all-activities-list span7">
+                {{#each activities}}
+                    <li class="single-activity" data-id="{{_id}}">
+                        <p>Name: {{name}}</p>
+                        <p>Date: {{date}}</p>
+                        <p>Time: {{time}}</p>
+                        <p>Duration: {{duration}}</p>
+                        <p>Activity: {{activity}}</p>
+                        <p>Skill Level: {{skillLevel}}</p>
+                        <p>Details: {{details}}</p>
+                        <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
+                        <p>Users:
+                            {{#each users}}
+                                <span data-placement="top" title="{{name}}"><img class="creator-img" src="{{image}}" width="40" height="40"></span>
+                            {{/each}}
+                        </p>
+                    </li>
+                    <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -143,7 +145,7 @@
     <div class="container-fluid">
         <h2 class="logged-out-mesasge">Welcome to Breaking Trail</h2>
         <h4 class="logged-out-mesasge">Meet fellow Backcountry employees, make new friends, and get outside.</h4>
-        <h4 class="logged-out-mesasge">Login with a Google account to view activities to join, or to create your own event.</h4>
+        <h4 class="logged-out-mesasge">Sign n with a Google account to view activities to join, or to create your own event.</h4>
         <img style="width: 100%; margin-top: 40px;" src="http://www.backcountry.com/wp-content/uploads/2014/06/postridebeveragev1_large.jpg">
     </div>
 </template>
