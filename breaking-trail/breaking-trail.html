@@ -141,25 +141,37 @@
 
 <template name="details">
     <div class="container-fluid">
-            {{#with details}}
-                <div class="single-activity" data-id="{{_id}}">
-                    <p>Name: {{name}}</p>
-                    <p>Date: {{date}}</p>
-                    <p>Time: {{time}}</p>
-                    <p>Duration: {{duration}}</p>
-                    <p>Activity: {{activity}}</p>
-                    <p>Skill Level: {{skillLevel}}</p>
-                    <p>Details: {{details.details}}</p>
-                    <p>Location: {{location}}</p>
-                    <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
-                    <p>Users:
-                        {{#each users}}
-                            <span data-placement="top" title="{{name}}"><img class="creator-img" src="{{image}}" width="40" height="40"></span>
-                        {{/each}}
-                    </p>
-                </div>
-                <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
-            {{/with}}
+        <h2>ACTIVITY DETAILS</h2>
+        <div class="row-fluid">
+            <ul class="all-activities-list span7">
+                {{#with details}}
+                    <li class="single-activity clearfix" data-id="{{_id}}">
+                        <div class="single-activity-skill {{skillLevel}}"></div>
+                        <div class="single-activity-info-wrap">
+                            <h3 class="single-event-title">{{name}}</h3>
+                            <p class="single-activity-activity">{{activity}}</p>
+                            <p class="single-event-details">{{details.details}}</p>
+                            <p class="single-activity-date"><span>{{date}}</span></p>
+                            <p class="single-activity-start">Start: <span>{{time}}</span></p>
+                            {{#if duration}}
+                                <p class="single-activity-duration">Duration: <span>{{duration}}</span></p>
+                            {{/if}}
+                            <p class="single-activity-location">Location: <span>{{location}}</span></p>
+                            <div class="single-activity-creator-wrap" data-placement="top" title="{{creator.name}}">
+                                <span>Creator:</span> <img class="creator-img" src="{{creator.image}}" width="40" height="40">
+                            </div>
+                            <div class="single-activity-users-wrap">
+                                <span>Users:</span>
+                                {{#each users}}
+                                    <img class="creator-img" src="{{image}}" width="40" height="40">
+                                {{/each}}
+                                <button class="join-event-btn" id="join-event-btn">Join</button>
+                            </div>
+                        </div>
+                    </li>
+                {{/with}}
+            </ul>
+        </div>
     </div>
 </template>
 
