@@ -1,3 +1,8 @@
+/* Global */
+.container-fluid {
+    padding: 0 40px;
+}
+
 /* Nav */
 .navbar-inner {
     background: #000;
@@ -12,11 +17,11 @@
     text-shadow: none;
 }
 .hello-user {
+    line-height: 60px;
     margin: 0 5px 0 0;
-    padding: 10px 0;
 }
 .login-buttons-wrap {
-    padding: 10px 0;
+    line-height: 60px;
 }
 #login-dropdown-list {
     right: 0;
@@ -31,9 +36,29 @@
     color: #000;
 }
 .nav-user-img {
-    border-radius: 20px;
+    border-radius: 30px;
     margin-left: 20px;
-    width: 40px;
+    width: 60px;
+}
+.create-event-btn {
+    background: #cf8929;
+    border: none;
+    color: #000;
+    text-shadow: none;
+}
+.nav-right {
+    padding: 10px 0;
+}
+.navbar .create-event-btn {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px 0 0 20px;
+}
+.navbar .create-event-btn i {
+    margin: 2px 2px 0 0;
 }
 
+
 /* Add Activity */
+#new-activity-form {
+}

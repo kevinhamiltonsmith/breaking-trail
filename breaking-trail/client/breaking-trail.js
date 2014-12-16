@@ -20,7 +20,9 @@ Template.activity.events({
             name: $("#activity-name").val(),
             skillLevel: $(".skill-level-btns-wrap input[type=radio]:checked").attr("value"),
             time: $( "#activity-time option:selected" ).text(),
-            users: [{name: creator}]
+            users: [{
+                name: creator
+            }]
         });
 
         return false;

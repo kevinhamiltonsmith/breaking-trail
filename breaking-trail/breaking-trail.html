@@ -5,35 +5,23 @@
 <body>
     <div class="navbar">
         <div class="navbar-inner">    
-            <a class="brand" href="/activities"><img src="images/BreakTrail_Logo.png" width="40" height="40"> Breaking Trail</a>
-            {{#if currentUser}}
-                <a class="btn pull-right" href="/activity">Create Event</a>
-                <a href="/profile"><img class="pull-right nav-user-img" src="{{currentUser.services.google.picture}}" width="40" height="40"></a>
-            {{/if}}
-            <div class="pull-right login-buttons-wrap">
-                {{> loginButtons}}
+            <a class="brand" href="/"><img src="images/BreakTrail_Logo.png" width="60" height="60"> Breaking Trail</a>
+            <div class="nav-right clearfix pull-right span7">
+                {{#if currentUser}}
+                    <a class="btn pull-right create-event-btn" href="/activity"><i class="icon-plus"></i>Create</a>
+                    <a href="/profile"><img class="pull-right nav-user-img" src="{{currentUser.services.google.picture}}" width="60" height="60"></a>
+                {{/if}}
+                <div class="pull-right login-buttons-wrap">
+                    {{> loginButtons}}
+                </div>
+                {{#if currentUser}}
+                    <p class="pull-right hello-user">Hello, </p>
+                {{else}}
+                    <p class="pull-right hello-user">Login with a Google account to get started.</p>
+                {{/if}}
             </div>
-            {{#if currentUser}}
-                <p class="pull-right hello-user">Hello, </p>
-            {{else}}
-                <p class="pull-right hello-user">Login with a Google account to get started.</p>
-            {{/if}}
         </div>
     </div>
-    <!-- <div class="container-fluid"> -->
-<!-- 
-        <div class="activity-wrapper">
-            {{#if currentUser}}
-                {{> activity}}
-            {{/if}}
-        </div>
-
-        <div class="content-wrapper">
-            {{#if currentUser}}
-                {{> activities}}
-            {{/if}}
-        </div> -->
-    <!-- </div> -->
 </body>
 
 <template name="home">
@@ -54,6 +42,7 @@
                 </select>
             </div>
             <div class="skill-level-btns-wrap">
+                <label for="activity-skill">Your Skill Level</label>
                 <input type="radio" name="skill-level" value="Beginner">Beginner
                 <input type="radio" name="skill-level" value="Intermediate">Intermediate
                 <input type="radio" name="skill-level" value="Expert" checked>Expert
