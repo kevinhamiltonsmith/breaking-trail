@@ -109,10 +109,10 @@
         <div class="row-fluid">
             <ul class="all-activities-list span7">
                 {{#each activities}}
-                    <li class="single-activity" data-id="{{_id}}">
+                    <li class="single-activity clearfix" data-id="{{_id}}">
                         <div class="single-activity-skill {{skillLevel}}"></div>
                         <div class="single-activity-info-wrap">
-                            <p id="show-event-btn">Name: {{name}}</p>
+                            <h3 class="single-event-title" id="show-event-btn">Name: {{name}}</h3>
                             <p>Date: {{date}}</p>
                             <p>Time: {{time}}</p>
                             <p>Duration: {{duration}}</p>
@@ -125,9 +125,9 @@
                                     <span data-placement="top" title="{{name}}"><img class="creator-img" src="{{image}}" width="40" height="40"></span>
                                 {{/each}}
                             </p>
+                            <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
                         </div>
                     </li>
-                    <input class="btn btn-success" id="join-event-btn" type="submit" value="Join Event">
                 {{/each}}
             </ul>
         </div>

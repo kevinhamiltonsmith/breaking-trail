@@ -96,7 +96,38 @@ h2.logged-out-mesasge {
 }
 .single-activity {
     background: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
 }
+.single-activity-info-wrap {
+    margin-left: 40px;
+    padding: 20px;
+}
+.single-activity-skill {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 40px;
+}
+.single-activity-skill.Beginner {
+    background-color: #ABCF3B;
+}
+.single-activity-skill.Intermediate {
+    background-color: #61B6CB;
+}
+.single-activity-skill.Expert {
+    background-color: #222;
+}
+.single-event-title {
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 25px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
 
 
 /* Add Activity */
