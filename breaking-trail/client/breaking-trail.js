@@ -1,9 +1,4 @@
 var BT = {};
-Handlebars.registerHelper("eventId", function() {
-   blah = Session.get('blah');
-   // code to do stuff with blah
-   return blah;
-});
 
 Template.activities.helpers({
     activities: function() {
@@ -62,8 +57,6 @@ Template.activities.events({
 
     'click #show-event-btn': function(e) {
         var temp = $(e.currentTarget).closest(".single-activity").data("id");
-        // console.log(temp);
-        // Session.set(eventId, temp)
         BT.detailsEventId = temp;
         Router.go('details');    
     }

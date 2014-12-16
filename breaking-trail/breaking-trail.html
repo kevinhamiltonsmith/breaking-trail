@@ -98,13 +98,14 @@
             <ul class="all-activities-list span7">
                 {{#each activities}}
                     <li class="single-activity" data-id="{{_id}}">
-                        <p>Name: {{name}}</p>
+                        <p id="show-event-btn">Name: {{name}}</p>
                         <p>Date: {{date}}</p>
                         <p>Time: {{time}}</p>
                         <p>Duration: {{duration}}</p>
                         <p>Activity: {{activity}}</p>
                         <p>Skill Level: {{skillLevel}}</p>
                         <p>Details: {{details}}</p>
+                        <p>Location: {{location}}</p>
                         <p data-placement="top" title="{{creator.name}}">Creator: <img class="creator-img" src="{{creator.image}}" width="40" height="40"></p>
                         <p>Users:
                             {{#each users}}
@@ -123,7 +124,7 @@
     <div class="container-fluid">
             {{#with details}}
                 <div class="single-activity" data-id="{{_id}}">
-                    <p id="show-event-btn">Name: {{name}}</p>
+                    <p>Name: {{name}}</p>
                     <p>Date: {{date}}</p>
                     <p>Time: {{time}}</p>
                     <p>Duration: {{duration}}</p>
